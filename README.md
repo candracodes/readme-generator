@@ -1,18 +1,34 @@
-# readme-generator
+# README Generator
 When creating an open source project on GitHub, it’s important to have a high-quality README for the app. This should include what the app is for, how to use the app, how to install it, how to report issues, and how to make contributions. This application quickly creates a README file by using command-line prompts.
 
-## Important & Relevent URLs
+## Table of Contents
+- [Important URLs](#urls)
+- [Foreword](#foreword)
+- [Usage](#usage)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Mockup](#mock-up)
+- [Frameworks](#frameworks)
+- [License](#Licensing)
 
-- [GitHub Repo URL](#)
+## URLs
+- [GitHub Repo URL](https://github.com/candracodes/readme-generator)
+- [Video Walkthrough](#)
 
 ## Foreword
 
 - This application aims to accomplish the following:
   - [Adhere to the homework Acceptance Criteria](./assets/_guide/README.md)
-  - Item
-  - Item
+  - Ask the user the following README file generation questions: 1. Title of their application, 2. Description of their application, 3. Table of Contents, 4. Installation, 5. Usage Information, 6. License, 7. Contributing, 8. Tests, and 9. Questions
+  - Provide a video walkthrough of this application's workflow
+  - Generate a README file after running the comman `node index.js` in the command line, and answering command line prompts
+  - Include any other necessary screenshots
 
-## User Story
+## Usage
+
+- This application generates a README file when entering the following in the command line: `node index.js`
+
+## User-Story
 
 ```md
 AS A developer
@@ -20,7 +36,7 @@ I WANT a README generator
 SO THAT I can quickly create a professional README for a new project
 ```
 
-## Acceptance Criteria
+## Acceptance-Criteria
 
 ```md
 GIVEN a command-line application that accepts user input
@@ -44,9 +60,10 @@ THEN I am taken to the corresponding section of the README
 
 * This portfolio resembles the following screenshot:
 
-![Screenshot 2](#)
+- ![Screenshot 2](#)
+- [Video Walkthrough](#)
 
-## Frameworks & Libraries
+## Frameworks
 
 The project is created using the following frameworks and libraries
 
@@ -55,3 +72,4 @@ The project is created using the following frameworks and libraries
 ## Licensing
 The project is made possible with the following Licensing:
 - [MIT](license.txt)
+
