@@ -5,11 +5,97 @@
 // 4. Test message to make sure the index file is working
 console.log("README app is working.");
 
+// TODO: Require a file system and the ability to retrieve logic from inquirer
+const fs = require('fs');
+const inquirer = require('inquirer');
+
 // TODO: Create an array of questions for user input
-const questions = [];
+// const questions = [];
+inquirer
+    .prompt([{
+            type: 'input',
+            message: 'What is the title of your application?',
+            name: 'title',
+        },
+        {
+            type: 'input',
+            message: 'Please describe your application...',
+            name: 'description',
+        },
+        {
+            type: 'input',
+            message: 'How can users go about installing your application?',
+            name: 'installation',
+        },
+        {
+            type: 'input',
+            message: 'How should users use this application?',
+            name: 'usage',
+        },
+        {
+            type: 'input',
+            message: 'Who are the contributors for this application?',
+            name: 'contributors',
+        },
+        {
+            type: 'input',
+            message: 'What licensing is included in this project (make this a choice and create badge based on selection',
+            name: 'license',
+        },
+        {
+            type: 'input',
+            message: 'How should users go about testing this application?',
+            name: 'tests',
+        },
+        {
+            type: 'input',
+            message: 'What questions would you like to include?',
+            name: 'questions',
+        }
+    ])
+    .then(response => {
+        console.log('response', response);
+        const fileContent = `# ${response.title}
+## Description
+- ${response.description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributors](#contributors)
+- [License](#license)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+- ${response.installation}
+
+## Usage
+- ${response.usage}
+
+## Contributors
+- ${response.contributors}
+
+## License
+- ${response.license}
+
+## Tests
+- ${response.tests}
+
+## Questions
+- ${response.questions}
+        `
+        fs.writeFile('README2.md', fileContent, (err) => {
+            if (err) {
+                console.log('ERROR:', err);
+            } else {
+                console.log('SUCCESS!');
+            }
+        });
+    });
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
@@ -21,7 +107,7 @@ init();
 // TODO: Set up the basic structure of the README file:
 /*
 ## ================================================
-# {project-title} {item}
+# {project-title}
 
 ## Description
 - {description}
