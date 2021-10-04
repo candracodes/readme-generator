@@ -2,8 +2,6 @@
 // 1. npm init -y (complete)
 // 2. npm install inquirer (complete)
 // 3. added .gitignore with node_modules and .DS_store
-// 4. Test message to make sure the index file is working
-console.log("README app is working.");
 
 // TODO: Require a file system and the ability to retrieve logic from inquirer
 const fs = require('fs');
@@ -38,9 +36,18 @@ inquirer
             name: 'contributors',
         },
         {
-            type: 'input',
-            message: 'What licensing is included in this project (make this a choice and create badge based on selection',
-            name: 'license',
+            type: "list",
+            name: "license",
+            message: "What license would you like to use for this application?",
+            choices: [
+                "Apache",
+                "Academic",
+                "GNU",
+                "ISC",
+                "MIT",
+                "Mozilla",
+                "Open"
+            ]
         },
         {
             type: 'input',
@@ -49,20 +56,32 @@ inquirer
         },
         {
             type: 'input',
-            message: 'What questions would you like to include?',
+            message: 'What information would you like to provide if users have questions?',
             name: 'questions',
+        },
+        {
+            type: 'input',
+            message: 'What is your Github username',
+            name: 'github',
+        },
+        {
+            type: 'input',
+            message: 'What is your email address?',
+            name: 'email',
         }
     ])
     .then(response => {
         console.log('response', response);
         const fileContent = `# ${response.title}
+![badge](https://img.shields.io/badge/license-${response.license}-brightgreen)
+
 ## Description
 - ${response.description}
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributors](#contributors)
+- [Contributors](#contributing)
 - [License](#license)
 - [Tests](#tests)
 - [Questions](#questions)
@@ -73,10 +92,11 @@ inquirer
 ## Usage
 - ${response.usage}
 
-## Contributors
+## Contributing
 - ${response.contributors}
 
 ## License
+![badge](https://img.shields.io/badge/license-${response.license}-brightgreen)
 - ${response.license}
 
 ## Tests
@@ -84,8 +104,10 @@ inquirer
 
 ## Questions
 - ${response.questions}
+- [GitHub Account](https://github.com/${response.github})
+- Contact Email: ${response.email}
         `
-        fs.writeFile('README2.md', fileContent, (err) => {
+        fs.writeFile('./utils/README.md', fileContent, (err) => {
             if (err) {
                 console.log('ERROR:', err);
             } else {
@@ -96,50 +118,12 @@ inquirer
 
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
+// I didn't go this route with my approach, so I don't actually need this function
 
 // TODO: Create a function to initialize app
+// I honestly don't know the reason I'd need this function either, but... I'll leave it here for later exploration
 function init() {}
 
 // Function call to initialize app
 init();
 
-
-// TODO: Set up the basic structure of the README file:
-/*
-## ================================================
-# {project-title}
-
-## Description
-- {description}
-
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Tests](#tests)
-- [Questions](#questions)
-
-## Installation
-- {installation}
-
-## Usage
-- {usage}
-
-## Contributors
-- {contributors}
-
-## License
-- {license}
-
-## Tests
-- {tests}
-
-## Questions
-- {questions}
-
---- 
-TODO: Investigate how to add a badge
-## Badges
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-*/

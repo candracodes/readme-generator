@@ -1,3 +1,5 @@
+// This javascript file seems like overkill. I'll schedule a tutoring session to see if he thinks I should explore this file and do anything with it.
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
