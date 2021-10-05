@@ -13,7 +13,7 @@ When creating an open source project on GitHub, it’s important to have a high-
 
 ## URLs
 - [GitHub Repo URL](https://github.com/candracodes/readme-generator)
-- [Video Walkthrough](#)
+- [Video Walkthrough](https://watch.screencastify.com/v/bcFi5F0nNPIliza41fK3)
 
 ## Foreword
 
