@@ -12,33 +12,33 @@ const inquirer = require('inquirer');
 inquirer
     .prompt([{
             type: 'input',
-            message: 'What is the title of your application?',
+            message: 'What is the title of your project?',
             name: 'title',
         },
         {
             type: 'input',
-            message: 'Please describe your application...',
+            message: 'Please describe your project...',
             name: 'description',
         },
         {
             type: 'input',
-            message: 'How can users go about installing your application?',
+            message: 'How can users go about installing your project?',
             name: 'installation',
         },
         {
             type: 'input',
-            message: 'How should users use this application?',
+            message: 'How should users use this project?',
             name: 'usage',
         },
         {
             type: 'input',
-            message: 'Who are the contributors for this application?',
+            message: 'Who are the contributors for this project?',
             name: 'contributors',
         },
         {
             type: "list",
             name: "license",
-            message: "What license would you like to use for this application?",
+            message: "What license would you like to use for this project?",
             choices: [
                 "Apache",
                 "Academic",
@@ -51,17 +51,17 @@ inquirer
         },
         {
             type: 'input',
-            message: 'How should users go about testing this application?',
+            message: 'How should users go about testing this project?',
             name: 'tests',
         },
         {
             type: 'input',
-            message: 'What information would you like to provide if users have questions?',
+            message: 'What message would you like to provide if users have questions about your project?',
             name: 'questions',
         },
         {
             type: 'input',
-            message: 'What is your Github username',
+            message: 'What is your Github username?',
             name: 'github',
         },
         {
@@ -97,15 +97,15 @@ inquirer
 
 ## License
 ![badge](https://img.shields.io/badge/license-${response.license}-brightgreen)
-- ${response.license}
+- This application is made possible with the following license: ${response.license}
 
 ## Tests
 - ${response.tests}
 
 ## Questions
 - ${response.questions}
-- [GitHub Account](https://github.com/${response.github})
-- Contact Email: ${response.email}
+- [Visit My GitHub Profile](https://github.com/${response.github})
+- Email: ${response.email}
         `
         fs.writeFile('./utils/README.md', fileContent, (err) => {
             if (err) {

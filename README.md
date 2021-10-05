@@ -60,8 +60,8 @@ THEN I am taken to the corresponding section of the README
 
 * This portfolio resembles the following screenshot:
 
-- ![Screenshot 2](#)
-- [Video Walkthrough](#)
+- ![Screenshot 2](./assets/screenshot.png)
+- [Video Walkthrough](https://watch.screencastify.com/v/bcFi5F0nNPIliza41fK3)
 
 ## Frameworks
 
