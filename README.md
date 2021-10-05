@@ -58,7 +58,7 @@ THEN I am taken to the corresponding section of the README
 
 ## Mock-Up
 
-* This portfolio resembles the following screenshot:
+* This application should resembles the following screenshot:
 
 - ![Screenshot 2](./assets/screenshot.png)
 - [Video Walkthrough](https://watch.screencastify.com/v/bcFi5F0nNPIliza41fK3)
