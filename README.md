@@ -58,7 +58,7 @@ THEN I am taken to the corresponding section of the README
 
 ## Mock-Up
 
-* This application should resembles the following screenshot:
+* This application should resemble the following screenshot and video walk-through:
 
 - ![Screenshot 2](./assets/screenshot.png)
 - [Video Walkthrough](https://watch.screencastify.com/v/bcFi5F0nNPIliza41fK3)
